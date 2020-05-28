@@ -20,7 +20,10 @@ class TodoController extends Controller
             'item' => 'required|max:255',
         ]);
 
-        $todo = Todo::create($request->all());
+        $todo = Todo::create([
+            'id'    => rand(),
+            'item'  => $request->item,
+        ]);
 
         return (new TodoResource($todo))
                 ->response()
