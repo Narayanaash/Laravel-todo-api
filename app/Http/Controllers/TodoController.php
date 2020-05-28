@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -21,18 +20,11 @@ class TodoController extends Controller
             'item' => 'required|max:255',
         ]);
 
-        $todo = new Todo;
-        $todo->id = rand();
-        $todo ->item = $request->item;
-        $todo->done = fale;
+        $todo = Todo::create($request->all());
 
-        if ($todo->save()) {
-            return (new TodoResource($todo))
+        return (new TodoResource($todo))
                 ->response()
                 ->setStatusCode(201);
-        } else {
-            return response()->json(['msg' => 'error inserting'], 404);
-        }
     }
 
     public function update($id)
