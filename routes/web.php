@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/cache-clear', function () {
+    Artisan::call('optimize:clear');
+});
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
