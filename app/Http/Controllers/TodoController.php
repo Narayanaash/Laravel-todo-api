@@ -23,7 +23,7 @@ class TodoController extends Controller
 
         $todo = new Todo;
         $todo->id = rand();
-        $todo =>item = $request->item;
+        $todo ->item = $request->item;
         $todo->done = fale;
 
         if ($todo->save()) {
