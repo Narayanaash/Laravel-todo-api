@@ -33,9 +33,6 @@ class TodoController extends Controller
         } else {
             return response()->json(['msg' => 'error inserting'], 404);
         }
-        return (new TodoResource($todo))
-                ->response()
-                ->setStatusCode(201);
     }
 
     public function update($id)
