@@ -25,9 +25,8 @@ class TodoController extends Controller
             'item'  => $request->item,
         ]);
 
-        return (new TodoResource($todo))
-                ->response()
-                ->setStatusCode(201);
+        return "dfd";
+                
     }
 
     public function update($id)
